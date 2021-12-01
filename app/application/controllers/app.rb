@@ -8,31 +8,17 @@ require 'json'
 module PaperDeep
   # Web App
   class App < Roda
-    use Rack::Cors, debug: true, logger: Logger.new($stdout) do
-      allowed_methods = %i[get post put delete options head]
-      allow do
-        origins 'localhost:3000'
-        resource '*', headers: :any, methods: allowed_methods, credentials: true
-      end
-    end
-    plugin :public, root: 'app/presentation/built', gzip: true
+    # use Rack::Cors, debug: true, logger: Logger.new($stdout) do
+    #   allowed_methods = %i[get post put delete options head]
+    #   allow do
+    #     origins 'localhost:3000'
+    #     resource '*', headers: :any, methods: allowed_methods, credentials: true
+    #   end
+    # end
+
     plugin :halt
-    plugin :flash
+
     route do |routing|
-      #########################################
-      #   For render react static files
-      routing.public
-
-      #   GET /
-      routing.root do
-        File.read('app/presentation/built/index.html')
-      end
-
-      routing.on ['test2', 'citedResult'] do
-        File.read('app/presentation/built/index.html')
-      end
-
-      #########################################
       #   For Apis
       routing.on 'search' do
         routing.is do
@@ -43,11 +29,18 @@ module PaperDeep
             result = PaperDeep::Service::AddPaper.new.call(search_request)
 
             if result.failure?
-              flash[:error] = result.failure
-              return { result: false, error: flash[:error] }.to_json
+              failed = Representer::HttpResponse.new(result.failure)
+              routing.halt failed.http_status_code, failed.to_json
+
+              # flash[:error] = result.failure
+              # return { result: false, error: flash[:error] }.to_json
             end
 
-            Views::Papers.new(result.value![:paper]).content.to_json
+            # http_response = Representer::HttpResponse.new(result.value!)
+            # response.status = http_response.http_status_code
+            qqq = Representer::PaperList.new(result.value![:paper]).to_json
+            puts qqq
+            # Views::Papers.new(result.value![:paper]).content.to_json
           end
         end
         routing.on 'publication' do
