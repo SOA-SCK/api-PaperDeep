@@ -28,19 +28,18 @@ module PaperDeep
             search_request = PaperDeep::Forms::NewSearch.new.call(params)
             result = PaperDeep::Service::AddPaper.new.call(search_request)
 
+            puts result
+            puts result.failure
+
             if result.failure?
               failed = Representer::HttpResponse.new(result.failure)
               routing.halt failed.http_status_code, failed.to_json
-
-              # flash[:error] = result.failure
-              # return { result: false, error: flash[:error] }.to_json
             end
 
             # http_response = Representer::HttpResponse.new(result.value!)
             # response.status = http_response.http_status_code
-            qqq = Representer::PaperList.new(result.value![:paper]).to_json
-            puts qqq
-            # Views::Papers.new(result.value![:paper]).content.to_json
+
+            Representer::PaperList.new(result.value!).represented[:paper].map(&:content).to_json
           end
         end
         routing.on 'publication' do

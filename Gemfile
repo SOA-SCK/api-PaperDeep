@@ -14,6 +14,7 @@ gem 'roar', '~> 1.1'
 # Web Application
 gem 'puma', '~> 5.5'
 gem 'rack-cors'
+gem 'rack', '~> 2' # 2.3 will fix delegateclass bug
 gem 'roda', '~> 3.49'
 gem 'slim', '~> 4.1'
 
