@@ -25,21 +25,20 @@ module PaperDeep
           # POST /search/
           routing.post do
             params = JSON.parse(routing.body.read)
-            search_request = PaperDeep::Forms::NewSearch.new.call(params)
-            result = PaperDeep::Service::AddPaper.new.call(search_request)
+            result = PaperDeep::Service::AddPaper.new.call(params)
 
-            puts result
-            puts result.failure
+            # puts result
+            # puts result.failure
 
             if result.failure?
               failed = Representer::HttpResponse.new(result.failure)
               routing.halt failed.http_status_code, failed.to_json
             end
 
-            # http_response = Representer::HttpResponse.new(result.value!)
-            # response.status = http_response.http_status_code
+            http_response = Representer::HttpResponse.new(result.value!)
+            response.status = http_response.http_status_code
 
-            Representer::PaperList.new(result.value!).represented[:paper].map(&:content).to_json
+            Representer::PaperList.new(result.value!.message).represented[:paper].map(&:content).to_json
           end
         end
         routing.on 'publication' do
