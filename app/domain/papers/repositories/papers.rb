@@ -26,10 +26,11 @@ module PaperDeep
         return nil unless db_record
 
         record = db_record.to_hash
-        return rebuild_entity(db_record) if record[:pid].nil?
+        pid = record[:pid]
+        return rebuild_entity(db_record) if pid.nil?
 
         publication_hash = {
-          pid: record[:pid],
+          pid: pid,
           journal_impact: record[:journal_impact],
           views_count: record[:views_count],
           citation_count: record[:citation_count],
