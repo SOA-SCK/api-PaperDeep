@@ -25,7 +25,7 @@
   :prism:coverDate: '2016-01-01'
   :prism:coverDisplayDate: '2016'
   :prism:doi: 10.1109/ACCESS.2016.2566339
-  :citedby-count: '1839'
+  :citedby-count: '1848'
   :affiliation:
   - :@_fa: 'true'
     :affilname: NC State University
@@ -75,7 +75,7 @@
   :prism:coverDate: '2017-09-07'
   :prism:coverDisplayDate: 7 September 2017
   :prism:doi: 10.1109/BigDataCongress.2017.85
-  :citedby-count: '1337'
+  :citedby-count: '1345'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Sun Yat-Sen University
@@ -116,7 +116,7 @@
   :prism:coverDate: '2015-07-17'
   :prism:coverDisplayDate: 17 July 2015
   :prism:doi: 10.1109/SPW.2015.27
-  :citedby-count: '1244'
+  :citedby-count: '1247'
   :affiliation:
   - :@_fa: 'true'
     :affilname: MIT Media Lab
@@ -158,7 +158,7 @@
   :prism:coverDate: '2016-08-16'
   :prism:coverDisplayDate: 16 August 2016
   :prism:doi: 10.1109/SP.2016.55
-  :citedby-count: '1048'
+  :citedby-count: '1052'
   :affiliation:
   - :@_fa: 'true'
     :affilname: University of Maryland, College Park
@@ -200,7 +200,7 @@
   :prism:coverDate: '2018-04-23'
   :prism:coverDisplayDate: 23 April 2018
   :prism:doi: 10.1145/3190508.3190538
-  :citedby-count: '988'
+  :citedby-count: '997'
   :affiliation:
   - :@_fa: 'true'
     :affilname: International Business Machines
@@ -223,47 +223,6 @@
     - :$: All Open Access
     - :$: Bronze
     - :$: Green
-- :@_fa: 'true'
-  :link:
-  - :@_fa: 'true'
-    :@ref: self
-    :@href: https://api.elsevier.com/content/abstract/scopus_id/84991717011
-  - :@_fa: 'true'
-    :@ref: author-affiliation
-    :@href: https://api.elsevier.com/content/abstract/scopus_id/84991717011?field=author,affiliation
-  - :@_fa: 'true'
-    :@ref: scopus
-    :@href: https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84991717011&origin=inward
-  - :@_fa: 'true'
-    :@ref: scopus-citedby
-    :@href: https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84991717011&origin=inward
-  :prism:url: https://api.elsevier.com/content/abstract/scopus_id/84991717011
-  :dc:identifier: SCOPUS_ID:84991717011
-  :eid: 2-s2.0-84991717011
-  :dc:title: 'MedRec: Using blockchain for medical data access and permission management'
-  :dc:creator: Azaria A.
-  :prism:publicationName: Proceedings - 2016 2nd International Conference on Open
-    and Big Data, OBD 2016
-  :prism:isbn:
-  - :@_fa: 'true'
-    :$: '9781509040544'
-  :prism:pageRange: 25-30
-  :prism:coverDate: '2016-09-21'
-  :prism:coverDisplayDate: 21 September 2016
-  :prism:doi: 10.1109/OBD.2016.11
-  :citedby-count: '911'
-  :affiliation:
-  - :@_fa: 'true'
-    :affilname: Massachusetts Institute of Technology
-    :affiliation-city: Cambridge
-    :affiliation-country: United States
-  :prism:aggregationType: Conference Proceeding
-  :subtype: cp
-  :subtypeDescription: Conference Paper
-  :article-number: '7573685'
-  :source-id: '21100782391'
-  :openaccess: '0'
-  :openaccessFlag: false
 - :@_fa: 'true'
   :link:
   - :@_fa: 'true'
@@ -292,7 +251,7 @@
   :prism:coverDate: '2018-01-01'
   :prism:coverDisplayDate: '2018'
   :prism:doi: 10.1080/00207543.2018.1444806
-  :citedby-count: '910'
+  :citedby-count: '920'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Old Dominion University
@@ -302,6 +261,47 @@
   :subtype: ar
   :subtypeDescription: Article
   :source-id: '27656'
+  :openaccess: '0'
+  :openaccessFlag: false
+- :@_fa: 'true'
+  :link:
+  - :@_fa: 'true'
+    :@ref: self
+    :@href: https://api.elsevier.com/content/abstract/scopus_id/84991717011
+  - :@_fa: 'true'
+    :@ref: author-affiliation
+    :@href: https://api.elsevier.com/content/abstract/scopus_id/84991717011?field=author,affiliation
+  - :@_fa: 'true'
+    :@ref: scopus
+    :@href: https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84991717011&origin=inward
+  - :@_fa: 'true'
+    :@ref: scopus-citedby
+    :@href: https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84991717011&origin=inward
+  :prism:url: https://api.elsevier.com/content/abstract/scopus_id/84991717011
+  :dc:identifier: SCOPUS_ID:84991717011
+  :eid: 2-s2.0-84991717011
+  :dc:title: 'MedRec: Using blockchain for medical data access and permission management'
+  :dc:creator: Azaria A.
+  :prism:publicationName: Proceedings - 2016 2nd International Conference on Open
+    and Big Data, OBD 2016
+  :prism:isbn:
+  - :@_fa: 'true'
+    :$: '9781509040544'
+  :prism:pageRange: 25-30
+  :prism:coverDate: '2016-09-21'
+  :prism:coverDisplayDate: 21 September 2016
+  :prism:doi: 10.1109/OBD.2016.11
+  :citedby-count: '919'
+  :affiliation:
+  - :@_fa: 'true'
+    :affilname: Massachusetts Institute of Technology
+    :affiliation-city: Cambridge
+    :affiliation-country: United States
+  :prism:aggregationType: Conference Proceeding
+  :subtype: cp
+  :subtypeDescription: Conference Paper
+  :article-number: '7573685'
+  :source-id: '21100782391'
   :openaccess: '0'
   :openaccessFlag: false
 - :@_fa: 'true'
@@ -334,7 +334,7 @@
   :prism:coverDisplayDate: May 2018
   :prism:doi: 10.1016/j.future.2017.11.022
   :pii: S0167739X17315765
-  :citedby-count: '892'
+  :citedby-count: '898'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Bahauddin Zakariya University
@@ -374,7 +374,7 @@
   :prism:coverDate: '2018-01-01'
   :prism:coverDisplayDate: '2018'
   :prism:doi: 10.1504/IJWGS.2018.095647
-  :citedby-count: '860'
+  :citedby-count: '864'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Sun Yat-Sen University
@@ -414,7 +414,7 @@
   :prism:coverDate: '2017-05-02'
   :prism:coverDisplayDate: 2 May 2017
   :prism:doi: 10.1109/PERCOMW.2017.7917634
-  :citedby-count: '816'
+  :citedby-count: '818'
   :affiliation:
   - :@_fa: 'true'
     :affilname: UNSW Sydney
@@ -510,7 +510,7 @@
   :prism:coverDate: '2016-10-24'
   :prism:coverDisplayDate: 24 October 2016
   :prism:doi: 10.1145/2976749.2978309
-  :citedby-count: '769'
+  :citedby-count: '770'
   :affiliation:
   - :@_fa: 'true'
     :affilname: National University of Singapore
@@ -549,7 +549,7 @@
   :prism:coverDate: '2016-07-01'
   :prism:coverDisplayDate: Third Quarter 2016
   :prism:doi: 10.1109/COMST.2016.2535718
-  :citedby-count: '762'
+  :citedby-count: '764'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Humboldt-Universität zu Berlin
@@ -590,7 +590,7 @@
   :prism:coverDate: '2019-01-01'
   :prism:coverDisplayDate: January 2019
   :prism:doi: 10.1145/3298981
-  :citedby-count: '746'
+  :citedby-count: '754'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Hong Kong University of Science and Technology
@@ -629,7 +629,7 @@
   :prism:pageRange:
   :prism:coverDate: '2017-01-01'
   :prism:coverDisplayDate: January-February 2017
-  :citedby-count: '651'
+  :citedby-count: '652'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Harvard Business School
@@ -668,7 +668,7 @@
   :prism:pageRange: 45-59
   :prism:coverDate: '2016-01-01'
   :prism:coverDisplayDate: '2016'
-  :citedby-count: '641'
+  :citedby-count: '643'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Cornell University
@@ -711,7 +711,7 @@
   :prism:coverDate: '2017-01-01'
   :prism:coverDisplayDate: '2017'
   :prism:doi: 10.1007/978-3-662-54455-6_8
-  :citedby-count: '631'
+  :citedby-count: '633'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Università degli Studi di Cagliari
@@ -793,7 +793,7 @@
   :prism:coverDate: '2018-01-01'
   :prism:coverDisplayDate: '2018'
   :prism:doi: 10.1098/rsif.2017.0387
-  :citedby-count: '620'
+  :citedby-count: '622'
   :affiliation:
   - :@_fa: 'true'
     :affilname: University of Hawaiʻi at Mānoa
@@ -849,7 +849,7 @@
   :prism:coverDate: '2016-10-24'
   :prism:coverDisplayDate: 24 October 2016
   :prism:doi: 10.1145/2976749.2978341
-  :citedby-count: '618'
+  :citedby-count: '621'
   :affiliation:
   - :@_fa: 'true'
     :affilname: ETH Zürich
@@ -893,7 +893,7 @@
   :prism:coverDisplayDate: February 2019
   :prism:doi: 10.1016/j.rser.2018.10.014
   :pii: S1364032118307184
-  :citedby-count: '594'
+  :citedby-count: '596'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Heriot-Watt University
@@ -945,7 +945,7 @@
   :prism:coverDate: '2019-04-03'
   :prism:coverDisplayDate: 3 April 2019
   :prism:doi: 10.1080/00207543.2018.1533261
-  :citedby-count: '590'
+  :citedby-count: '593'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Foisie Business School
@@ -987,7 +987,7 @@
   :prism:coverDisplayDate: November 2018
   :prism:doi: 10.1016/j.future.2018.05.046
   :pii: S0167739X17329205
-  :citedby-count: '587'
+  :citedby-count: '591'
   :affiliation:
   - :@_fa: 'true'
     :affilname: Universidad de Málaga
