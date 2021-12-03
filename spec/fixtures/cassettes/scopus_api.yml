@@ -854,4 +854,386 @@ http_interactions:
         "@type": "application/json"}],"entry": [{"@_fa": "true", "error":"Result set
         was empty"}]}}'
   recorded_at: Fri, 26 Nov 2021 08:16:08 GMT
+- request:
+    method: get
+    uri: https://api.elsevier.com/content/search/scopus?query&sort=citedby-count
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Els-Apikey:
+      - SCOPUS_API_TOKEN
+      Connection:
+      - close
+      Host:
+      - api.elsevier.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 03 Dec 2021 08:13:20 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '130'
+      Connection:
+      - close
+      Allow:
+      - GET
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Els-Apikey:
+      - SCOPUS_API_TOKEN
+      X-Els-Reqid:
+      - fe4b4bddf9856e2c
+      X-Els-Resourceversion:
+      - default
+      X-Els-Status:
+      - INVALID_INPUT - Must provide search criteria using the query parameter.
+      X-Els-Transid:
+      - 462e18c0e57cb15e
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6b7b55c39f316b72-TPE
+    body:
+      encoding: UTF-8
+      string: '{"service-error":{"status":{"statusCode":"INVALID_INPUT","statusText":"Must
+        provide search criteria using the query parameter."}}}'
+  recorded_at: Fri, 03 Dec 2021 08:13:20 GMT
+- request:
+    method: get
+    uri: https://api.elsevier.com/content/search/scopus?query=keyword&sort=citedby-count
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Els-Apikey:
+      - SCOPUS_API_TOKEN
+      Connection:
+      - close
+      Host:
+      - api.elsevier.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 03 Dec 2021 08:18:33 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - close
+      Allow:
+      - GET
+      Vary:
+      - Accept-Encoding
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Els-Apikey:
+      - SCOPUS_API_TOKEN
+      X-Els-Reqid:
+      - c760684ca0cbf1b6
+      X-Els-Resourceversion:
+      - default
+      X-Els-Status:
+      - OK
+      X-Els-Transid:
+      - f89e4455fc17283a
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6b7b5d64ab0a6a96-TPE
+    body:
+      encoding: UTF-8
+      string: '{"search-results":{"opensearch:totalResults":"150978","opensearch:startIndex":"0","opensearch:itemsPerPage":"25","opensearch:Query":{"@role":
+        "request", "@searchTerms": "keyword", "@startPage": "0"},"link": [{"@_fa":
+        "true", "@ref": "self", "@href": "https://api.elsevier.com/content/search/scopus?start=0&count=25&query=keyword&sort=citedby-count",
+        "@type": "application/json"},{"@_fa": "true", "@ref": "first", "@href": "https://api.elsevier.com/content/search/scopus?start=0&count=25&query=keyword&sort=citedby-count",
+        "@type": "application/json"},{"@_fa": "true", "@ref": "next", "@href": "https://api.elsevier.com/content/search/scopus?start=25&count=25&query=keyword&sort=citedby-count",
+        "@type": "application/json"},{"@_fa": "true", "@ref": "last", "@href": "https://api.elsevier.com/content/search/scopus?start=4975&count=25&query=keyword&sort=citedby-count",
+        "@type": "application/json"}],"entry": [{"@_fa": "true", "link": [{"@_fa":
+        "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/27844518793"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/27844518793?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=27844518793&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=27844518793&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/27844518793","dc:identifier":"SCOPUS_ID:27844518793","eid":"2-s2.0-27844518793","dc:title":"Three
+        approaches to qualitative content analysis","dc:creator":"Hsieh H.","prism:publicationName":"Qualitative
+        Health Research","prism:issn":"10497323","prism:volume":"15","prism:issueIdentifier":"9","prism:pageRange":"1277-1288","prism:coverDate":"2005-11-01","prism:coverDisplayDate":"November
+        2005","prism:doi":"10.1177/1049732305276687","citedby-count":"17259","affiliation":
+        [{"@_fa": "true", "affilname":"Fooyin University Taiwan","affiliation-city":"Taliao","affiliation-country":"Taiwan"}],"pubmed-id":"16204405","prism:aggregationType":"Journal","subtype":"ar","subtypeDescription":"Article","source-id":"17712","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/34447508216"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/34447508216?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=34447508216&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=34447508216&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/34447508216","dc:identifier":"SCOPUS_ID:34447508216","eid":"2-s2.0-34447508216","dc:title":"Phaser
+        crystallographic software","dc:creator":"McCoy A.J.","prism:publicationName":"Journal
+        of Applied Crystallography","prism:issn":"00218898","prism:eIssn":"16005767","prism:volume":"40","prism:issueIdentifier":"4","prism:pageRange":"658-674","prism:coverDate":"2007-07-13","prism:coverDisplayDate":"13
+        July 2007","prism:doi":"10.1107/S0021889807021206","pii":"S0021889807021206","citedby-count":"13103","affiliation":
+        [{"@_fa": "true", "affilname":"Cambridge Institute for Medical Research","affiliation-city":"Cambridge","affiliation-country":"United
+        Kingdom"}],"prism:aggregationType":"Journal","subtype":"ar","subtypeDescription":"Article","source-id":"24693","openaccess":"1","openaccessFlag":true,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"publisherhybridgold"},{"$" :"repository"},{"$" :"repositoryvor"}]},"freetoreadLabel":{"value":
+        [{"$" :"All Open Access"},{"$" :"Hybrid Gold"},{"$" :"Green"}]}},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84910651844"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84910651844?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84910651844&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84910651844&origin=inward"},{"@_fa":
+        "true", "@ref": "full-text", "@href": "https://api.elsevier.com/content/article/eid/1-s2.0-S0893608014002135"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84910651844","dc:identifier":"SCOPUS_ID:84910651844","eid":"2-s2.0-84910651844","dc:title":"Deep
+        Learning in neural networks: An overview","dc:creator":"Schmidhuber J.","prism:publicationName":"Neural
+        Networks","prism:issn":"08936080","prism:eIssn":"18792782","prism:volume":"61","prism:pageRange":"85-117","prism:coverDate":"2015-01-01","prism:coverDisplayDate":"January
+        01, 2015","prism:doi":"10.1016/j.neunet.2014.09.003","pii":"S0893608014002135","citedby-count":"8169","affiliation":
+        [{"@_fa": "true", "affilname":"Università della Svizzera italiana","affiliation-city":"Lugano","affiliation-country":"Switzerland"}],"pubmed-id":"25462637","prism:aggregationType":"Journal","subtype":"re","subtypeDescription":"Review","source-id":"24804","openaccess":"0","openaccessFlag":false,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"repository"},{"$" :"repositoryam"}]},"freetoreadLabel":{"value":
+        [{"$" :"All Open Access"},{"$" :"Green"}]}},{"@_fa": "true", "link": [{"@_fa":
+        "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84989525001"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84989525001?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84989525001&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84989525001&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84989525001","dc:identifier":"SCOPUS_ID:84989525001","eid":"2-s2.0-84989525001","dc:title":"Indexing
+        by latent semantic analysis","dc:creator":"Deerwester S.","prism:publicationName":"Journal
+        of the American Society for Information Science","prism:issn":"00028231","prism:eIssn":"10974571","prism:volume":"41","prism:issueIdentifier":"6","prism:pageRange":"391-407","prism:coverDate":"1990-01-01","prism:coverDisplayDate":"September
+        1990","prism:doi":"10.1002/(SICI)1097-4571(199009)41:6<391::AID-ASI1>3.0.CO;2-9","citedby-count":"8103","affiliation":
+        [{"@_fa": "true", "affilname":"The University of Chicago","affiliation-city":"Chicago","affiliation-country":"United
+        States"}],"prism:aggregationType":"Journal","subtype":"ar","subtypeDescription":"Article","source-id":"36143","openaccess":"0","openaccessFlag":false,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"repository"},{"$" :"repositoryam"}]},"freetoreadLabel":{"value":
+        [{"$" :"All Open Access"},{"$" :"Green"}]}},{"@_fa": "true", "link": [{"@_fa":
+        "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84876996918"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84876996918?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84876996918&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84876996918&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84876996918","dc:identifier":"SCOPUS_ID:84876996918","eid":"2-s2.0-84876996918","dc:title":"TopHat2:
+        Accurate alignment of transcriptomes in the presence of insertions, deletions
+        and gene fusions","dc:creator":"Kim D.","prism:publicationName":"Genome Biology","prism:eIssn":"1474760X","prism:volume":"14","prism:issueIdentifier":"4","prism:pageRange":null,"prism:coverDate":"2013-04-25","prism:coverDisplayDate":"25
+        April 2013","prism:doi":"10.1186/gb-2013-14-4-r36","citedby-count":"7719","affiliation":
+        [{"@_fa": "true", "affilname":"University of Maryland, College Park","affiliation-city":"College
+        Park","affiliation-country":"United States"},{"@_fa": "true", "affilname":"Johns
+        Hopkins School of Medicine","affiliation-city":"Baltimore","affiliation-country":"United
+        States"}],"pubmed-id":"23618408","prism:aggregationType":"Journal","subtype":"ar","subtypeDescription":"Article","article-number":"R36","source-id":"40944","openaccess":"1","openaccessFlag":true,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"publisherhybridgold"},{"$" :"repository"},{"$" :"repositoryvor"}]},"freetoreadLabel":{"value":
+        [{"$" :"All Open Access"},{"$" :"Hybrid Gold"},{"$" :"Green"}]}},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/45549117987"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/45549117987?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=45549117987&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=45549117987&origin=inward"},{"@_fa":
+        "true", "@ref": "full-text", "@href": "https://api.elsevier.com/content/article/eid/1-s2.0-0306457388900210"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/45549117987","dc:identifier":"SCOPUS_ID:45549117987","eid":"2-s2.0-45549117987","dc:title":"Term-weighting
+        approaches in automatic text retrieval","dc:creator":"Salton G.","prism:publicationName":"Information
+        Processing and Management","prism:issn":"03064573","prism:volume":"24","prism:issueIdentifier":"5","prism:pageRange":"513-523","prism:coverDate":"1988-01-01","prism:coverDisplayDate":"1988","prism:doi":"10.1016/0306-4573(88)90021-0","pii":"0306-4573(88)90021-0","citedby-count":"5574","affiliation":
+        [{"@_fa": "true", "affilname":"Cornell University","affiliation-city":"Ithaca","affiliation-country":"United
+        States"}],"prism:aggregationType":"Journal","subtype":"ar","subtypeDescription":"Article","source-id":"12689","openaccess":"0","openaccessFlag":false,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"repository"}]},"freetoreadLabel":{"value": [{"$" :"All
+        Open Access"},{"$" :"Green"}]}},{"@_fa": "true", "link": [{"@_fa": "true",
+        "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/0002442796"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/0002442796?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=0002442796&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=0002442796&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/0002442796","dc:identifier":"SCOPUS_ID:0002442796","eid":"2-s2.0-0002442796","dc:title":"Machine
+        Learning in Automated Text Categorization","dc:creator":"Sebastiani F.","prism:publicationName":"ACM
+        Computing Surveys","prism:issn":"03600300","prism:volume":"34","prism:issueIdentifier":"1","prism:pageRange":"1-47","prism:coverDate":"2002-01-01","prism:coverDisplayDate":"March
+        2002","prism:doi":"10.1145/505282.505283","citedby-count":"5431","affiliation":
+        [{"@_fa": "true", "affilname":"Consiglio Nazionale delle Ricerche","affiliation-city":"Rome","affiliation-country":"Italy"}],"prism:aggregationType":"Journal","subtype":"re","subtypeDescription":"Review","source-id":"23038","openaccess":"0","openaccessFlag":false,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"repository"},{"$" :"repositoryam"}]},"freetoreadLabel":{"value":
+        [{"$" :"All Open Access"},{"$" :"Green"}]}},{"@_fa": "true", "link": [{"@_fa":
+        "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84909008091"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84909008091?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84909008091&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84909008091&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84909008091","dc:identifier":"SCOPUS_ID:84909008091","eid":"2-s2.0-84909008091","dc:title":"Visible
+        learning: A synthesis of over 800 meta-analyses relating to achievement","dc:creator":"Hattie
+        J.","prism:publicationName":"Visible Learning: A Synthesis of Over 800 Meta-Analyses
+        Relating to Achievement","prism:isbn": [{"@_fa": "true", "$" :"0203887336"},{"@_fa":
+        "true", "$" :"9780203887332"}],"prism:pageRange":"1-378","prism:coverDate":"2008-11-17","prism:coverDisplayDate":"November
+        17, 2008","prism:doi":"10.4324/9780203887332","citedby-count":"4056","affiliation":
+        [{"@_fa": "true", "affilname":"The University of Auckland","affiliation-city":"Auckland","affiliation-country":"New
+        Zealand"}],"prism:aggregationType":"Book","subtype":"bk","subtypeDescription":"Book","source-id":"21100343911","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/0042242856"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/0042242856?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=0042242856&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=0042242856&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/0042242856","dc:identifier":"SCOPUS_ID:0042242856","eid":"2-s2.0-0042242856","dc:title":"A
+        partial least squares latent variable modeling approach for measuring interaction
+        effects: Results from a Monte Carlo simulation study and an electronic-mail
+        emotion/adoption study","dc:creator":"Chin W.W.","prism:publicationName":"Information
+        Systems Research","prism:issn":"10477047","prism:volume":"14","prism:issueIdentifier":"2","prism:pageRange":null,"prism:coverDate":"2003-01-01","prism:coverDisplayDate":"June
+        2003","prism:doi":"10.1287/isre.14.2.189.16018","citedby-count":"3621","affiliation":
+        [{"@_fa": "true", "affilname":"C. T. Bauer College of Business","affiliation-city":"Houston","affiliation-country":"United
+        States"}],"prism:aggregationType":"Journal","subtype":"ar","subtypeDescription":"Article","source-id":"15574","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/34547273527"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/34547273527?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=34547273527&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=34547273527&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/34547273527","dc:identifier":"SCOPUS_ID:34547273527","eid":"2-s2.0-34547273527","dc:title":"Attribute-based
+        encryption for fine-grained access control of encrypted data","dc:creator":"Goyal
+        V.","prism:publicationName":"Proceedings of the ACM Conference on Computer
+        and Communications Security","prism:issn":"15437221","prism:pageRange":"89-98","prism:coverDate":"2006-12-01","prism:coverDisplayDate":"2006","prism:doi":"10.1145/1180405.1180418","citedby-count":"3399","affiliation":
+        [{"@_fa": "true", "affilname":"University of California, Los Angeles","affiliation-city":"Los
+        Angeles","affiliation-country":"United States"}],"prism:aggregationType":"Conference
+        Proceeding","subtype":"cp","subtypeDescription":"Conference Paper","article-number":"1180418","source-id":"110362","openaccess":"0","openaccessFlag":false,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"repository"},{"$" :"repositoryam"}]},"freetoreadLabel":{"value":
+        [{"$" :"All Open Access"},{"$" :"Green"}]}},{"@_fa": "true", "link": [{"@_fa":
+        "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/23944514914"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/23944514914?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=23944514914&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=23944514914&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/23944514914","dc:identifier":"SCOPUS_ID:23944514914","eid":"2-s2.0-23944514914","dc:title":"The
+        complexity of intersectionality","dc:creator":"McCall L.","prism:publicationName":"Signs","prism:issn":"00979740","prism:eIssn":"15456943","prism:volume":"30","prism:issueIdentifier":"3","prism:pageRange":"1771-1800","prism:coverDate":"2005-03-01","prism:coverDisplayDate":"March
+        2005","prism:doi":"10.1086/426800","citedby-count":"2852","affiliation": [{"@_fa":
+        "true", "affilname":"Rutgers University–New Brunswick","affiliation-city":"New
+        Brunswick","affiliation-country":"United States"}],"prism:aggregationType":"Journal","subtype":"ar","subtypeDescription":"Article","source-id":"24273","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84909423158"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84909423158?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84909423158&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84909423158&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84909423158","dc:identifier":"SCOPUS_ID:84909423158","eid":"2-s2.0-84909423158","dc:title":"After
+        method: Mess in social science research","dc:creator":"Law J.","prism:publicationName":"After
+        Method: Mess in Social Science Research","prism:isbn": [{"@_fa": "true", "$"
+        :"0203481143"},{"@_fa": "true", "$" :"9780203481141"}],"prism:pageRange":"1-188","prism:coverDate":"2004-08-12","prism:coverDisplayDate":"August
+        12, 2004","prism:doi":"10.4324/9780203481141","citedby-count":"2800","affiliation":
+        [{"@_fa": "true", "affilname":"Lancaster University","affiliation-city":"Lancaster","affiliation-country":"United
+        Kingdom"}],"prism:aggregationType":"Book","subtype":"bk","subtypeDescription":"Book","source-id":"21100343982","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/77954571408"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/77954571408?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=77954571408&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=77954571408&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/77954571408","dc:identifier":"SCOPUS_ID:77954571408","eid":"2-s2.0-77954571408","dc:title":"Earthquake
+        shakes Twitter users: Real-time event detection by social sensors","dc:creator":"Sakaki
+        T.","prism:publicationName":"Proceedings of the 19th International Conference
+        on World Wide Web, WWW ''10","prism:isbn": [{"@_fa": "true", "$" :"9781605587998"}],"prism:pageRange":"851-860","prism:coverDate":"2010-07-20","prism:coverDisplayDate":"2010","prism:doi":"10.1145/1772690.1772777","citedby-count":"2733","affiliation":
+        [{"@_fa": "true", "affilname":"The University of Tokyo","affiliation-city":"Tokyo","affiliation-country":"Japan"}],"prism:aggregationType":"Conference
+        Proceeding","subtype":"cp","subtypeDescription":"Conference Paper","source-id":"19700175801","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84883800683"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84883800683?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84883800683&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84883800683&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84883800683","dc:identifier":"SCOPUS_ID:84883800683","eid":"2-s2.0-84883800683","dc:title":"Content
+        analysis and thematic analysis: Implications for conducting a qualitative
+        descriptive study","dc:creator":"Vaismoradi M.","prism:publicationName":"Nursing
+        and Health Sciences","prism:issn":"14410745","prism:eIssn":"14422018","prism:volume":"15","prism:issueIdentifier":"3","prism:pageRange":"398-405","prism:coverDate":"2013-09-01","prism:coverDisplayDate":"September
+        2013","prism:doi":"10.1111/nhs.12048","citedby-count":"2636","affiliation":
+        [{"@_fa": "true", "affilname":"Nord universitet","affiliation-city":"Bodo","affiliation-country":"Norway"},{"@_fa":
+        "true", "affilname":"Swansea University","affiliation-city":"Swansea","affiliation-country":"United
+        Kingdom"}],"pubmed-id":"23480423","prism:aggregationType":"Journal","subtype":"re","subtypeDescription":"Review","source-id":"28826","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84939560937"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84939560937?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84939560937&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84939560937&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84939560937","dc:identifier":"SCOPUS_ID:84939560937","eid":"2-s2.0-84939560937","dc:title":"Mental
+        Representations: A dual coding approach","dc:creator":"Paivio A.","prism:publicationName":"Mental
+        Representations: A Dual Coding Approach","prism:isbn": [{"@_fa": "true", "$"
+        :"9780199894086"},{"@_fa": "true", "$" :"0195066669"},{"@_fa": "true", "$"
+        :"9780195066661"}],"prism:pageRange":"1-322","prism:coverDate":"2008-09-01","prism:coverDisplayDate":"September
+        01, 2008","prism:doi":"10.1093/acprof:oso/9780195066661.001.0001","citedby-count":"2522","affiliation":
+        [{"@_fa": "true", "affilname":"The University of Western Ontario","affiliation-city":"London","affiliation-country":"Canada"}],"prism:aggregationType":"Book","subtype":"bk","subtypeDescription":"Book","source-id":"21100403865","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/77951968604"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/77951968604?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=77951968604&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=77951968604&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/77951968604","dc:identifier":"SCOPUS_ID:77951968604","eid":"2-s2.0-77951968604","dc:title":"Systematic
+        review of the health benefits of physical activity and fitness in school-aged
+        children and youth","dc:creator":"Janssen I.","prism:publicationName":"International
+        Journal of Behavioral Nutrition and Physical Activity","prism:eIssn":"14795868","prism:volume":"7","prism:pageRange":null,"prism:coverDate":"2010-05-11","prism:coverDisplayDate":"11
+        May 2010","prism:doi":"10.1186/1479-5868-7-40","citedby-count":"2519","affiliation":
+        [{"@_fa": "true", "affilname":"Queen’s University","affiliation-city":"Kingston","affiliation-country":"Canada"}],"prism:aggregationType":"Journal","subtype":"re","subtypeDescription":"Review","article-number":"40","source-id":"14875","openaccess":"1","openaccessFlag":true,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"publisherfullgold"},{"$" :"repository"},{"$" :"repositoryvor"}]},"freetoreadLabel":{"value":
+        [{"$" :"All Open Access"},{"$" :"Gold"},{"$" :"Green"}]}},{"@_fa": "true",
+        "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84950161033"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84950161033?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84950161033&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84950161033&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84950161033","dc:identifier":"SCOPUS_ID:84950161033","eid":"2-s2.0-84950161033","dc:title":"Consumer
+        culture and postmodernism","dc:creator":"Featherstone M.","prism:publicationName":"Consumer
+        Culture and Postmodernism","prism:isbn": [{"@_fa": "true", "$" :"9781446212424"},{"@_fa":
+        "true", "$" :"9781412910149"}],"prism:pageRange":"1-203","prism:coverDate":"2007-01-01","prism:coverDisplayDate":"1
+        January 2007","prism:doi":"10.4135/9781446212424","citedby-count":"2476","affiliation":
+        [{"@_fa": "true", "affilname":"Goldsmiths, University of London","affiliation-city":"London","affiliation-country":"United
+        Kingdom"}],"prism:aggregationType":"Book","subtype":"bk","subtypeDescription":"Book","source-id":"21100430965","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/85114317854"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/85114317854?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85114317854&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85114317854&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/85114317854","dc:identifier":"SCOPUS_ID:85114317854","eid":"2-s2.0-85114317854","dc:title":"TextRank:
+        Bringing order into texts","dc:creator":"Mihalcea R.","prism:publicationName":"Proceedings
+        of the 2004 Conference on Empirical Methods in Natural Language Processing,
+        EMNLP 2004 - A meeting of SIGDAT, a Special Interest Group of the ACL held
+        in conjunction with ACL 2004","prism:pageRange":"404-411","prism:coverDate":"2004-01-01","prism:coverDisplayDate":"2004","citedby-count":"2321","affiliation":
+        [{"@_fa": "true", "affilname":"University of North Texas","affiliation-city":"Denton","affiliation-country":"United
+        States"}],"prism:aggregationType":"Conference Proceeding","subtype":"cp","subtypeDescription":"Conference
+        Paper","source-id":"21101061938","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/0029021368"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/0029021368?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=0029021368&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=0029021368&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/0029021368","dc:identifier":"SCOPUS_ID:0029021368","eid":"2-s2.0-0029021368","dc:title":"Changing
+        physician performance: A systematic review of the effect of continuing medical
+        education strategies","dc:creator":"Davis D.A.","prism:publicationName":"Journal
+        of the American Medical Association","prism:issn":"00987484","prism:volume":"274","prism:issueIdentifier":"9","prism:pageRange":"700-705","prism:coverDate":"1995-09-06","prism:coverDisplayDate":"6
+        September 1995","prism:doi":"10.1001/jama.274.9.700","citedby-count":"2320","affiliation":
+        [{"@_fa": "true", "affilname":"University of Toronto","affiliation-city":"Toronto","affiliation-country":"Canada"}],"pubmed-id":"7650822","prism:aggregationType":"Journal","subtype":"re","subtypeDescription":"Review","source-id":"85291","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84970122636"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84970122636?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84970122636&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84970122636&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84970122636","dc:identifier":"SCOPUS_ID:84970122636","eid":"2-s2.0-84970122636","dc:title":"Disjuncture
+        and Difference in the Global Cultural Economy","dc:creator":"Appadurai A.","prism:publicationName":"Theory,
+        Culture &amp; Society","prism:issn":"02632764","prism:eIssn":"14603616","prism:volume":"7","prism:issueIdentifier":"2","prism:pageRange":"295-310","prism:coverDate":"1990-01-01","prism:coverDisplayDate":"June
+        1990","prism:doi":"10.1177/026327690007002017","citedby-count":"2306","prism:aggregationType":"Journal","subtype":"ar","subtypeDescription":"Article","source-id":"18699","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84861997111"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84861997111?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84861997111&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84861997111&origin=inward"},{"@_fa":
+        "true", "@ref": "full-text", "@href": "https://api.elsevier.com/content/article/eid/1-s2.0-S1570870512000674"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84861997111","dc:identifier":"SCOPUS_ID:84861997111","eid":"2-s2.0-84861997111","dc:title":"Internet
+        of things: Vision, applications and research challenges","dc:creator":"Miorandi
+        D.","prism:publicationName":"Ad Hoc Networks","prism:issn":"15708705","prism:volume":"10","prism:issueIdentifier":"7","prism:pageRange":"1497-1516","prism:coverDate":"2012-01-01","prism:coverDisplayDate":"September
+        2012","prism:doi":"10.1016/j.adhoc.2012.02.016","pii":"S1570870512000674","citedby-count":"2273","affiliation":
+        [{"@_fa": "true", "affilname":"Center for REsearch And Telecommunication Experimentation
+        for NETworked communities","affiliation-city":"Trento","affiliation-country":"Italy"}],"prism:aggregationType":"Journal","subtype":"sh","subtypeDescription":"Short
+        Survey","source-id":"26799","openaccess":"0","openaccessFlag":false,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"repository"},{"$" :"repositoryvor"}]},"freetoreadLabel":{"value":
+        [{"$" :"All Open Access"},{"$" :"Green"}]}},{"@_fa": "true", "link": [{"@_fa":
+        "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84889790396"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84889790396?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84889790396&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84889790396&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84889790396","dc:identifier":"SCOPUS_ID:84889790396","eid":"2-s2.0-84889790396","dc:title":"Isogeometric
+        Analysis: Toward Integration of CAD and FEA","dc:creator":"Cottrell J.A.","prism:publicationName":"Isogeometric
+        Analysis: Toward Integration of CAD and FEA","prism:isbn": [{"@_fa": "true",
+        "$" :"9780470748732"}],"prism:pageRange":"1-335","prism:coverDate":"2009-09-10","prism:coverDisplayDate":"10
+        September 2009","prism:doi":"10.1002/9780470749081","citedby-count":"2200","affiliation":
+        [{"@_fa": "true", "affilname":"Citigroup","affiliation-city":"New York","affiliation-country":"United
+        States"}],"prism:aggregationType":"Book","subtype":"bk","subtypeDescription":"Book","source-id":"21100273705","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84909208148"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/84909208148?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84909208148&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84909208148&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/84909208148","dc:identifier":"SCOPUS_ID:84909208148","eid":"2-s2.0-84909208148","dc:title":"States
+        of knowledge: The co-production of science and the social order","dc:creator":"Jasanoff
+        S.","prism:publicationName":"States of Knowledge: The Co-Production of Science
+        and the Social Order","prism:isbn": [{"@_fa": "true", "$" :"0203413849"},{"@_fa":
+        "true", "$" :"9780203413845"}],"prism:pageRange":"1-317","prism:coverDate":"2004-02-05","prism:coverDisplayDate":"February
+        05, 2004","prism:doi":"10.4324/9780203413845","citedby-count":"2108","affiliation":
+        [{"@_fa": "true", "affilname":"Harvard University","affiliation-city":"Cambridge","affiliation-country":"United
+        States"}],"prism:aggregationType":"Book","subtype":"bk","subtypeDescription":"Book","source-id":"21100339703","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/0016518897"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/0016518897?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=0016518897&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=0016518897&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/0016518897","dc:identifier":"SCOPUS_ID:0016518897","eid":"2-s2.0-0016518897","dc:title":"Efficient
+        String Matching: An Aid to Bibliographic Search","dc:creator":"Aho A.V.","prism:publicationName":"Communications
+        of the ACM","prism:issn":"00010782","prism:eIssn":"15577317","prism:volume":"18","prism:issueIdentifier":"6","prism:pageRange":"333-340","prism:coverDate":"1975-06-01","prism:coverDisplayDate":"1
+        June 1975","prism:doi":"10.1145/360825.360855","citedby-count":"2101","affiliation":
+        [{"@_fa": "true", "affilname":"Nokia Bell Labs","affiliation-city":"Murray","affiliation-country":"United
+        States"}],"prism:aggregationType":"Journal","subtype":"ar","subtypeDescription":"Article","source-id":"13675","openaccess":"0","openaccessFlag":false},{"@_fa":
+        "true", "link": [{"@_fa": "true", "@ref": "self", "@href": "https://api.elsevier.com/content/abstract/scopus_id/79958142685"},{"@_fa":
+        "true", "@ref": "author-affiliation", "@href": "https://api.elsevier.com/content/abstract/scopus_id/79958142685?field=author,affiliation"},{"@_fa":
+        "true", "@ref": "scopus", "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=79958142685&origin=inward"},{"@_fa":
+        "true", "@ref": "scopus-citedby", "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=79958142685&origin=inward"}],"prism:url":"https://api.elsevier.com/content/abstract/scopus_id/79958142685","dc:identifier":"SCOPUS_ID:79958142685","eid":"2-s2.0-79958142685","dc:title":"The
+        business model: Recent developments and future research","dc:creator":"Zott
+        C.","prism:publicationName":"Journal of Management","prism:issn":"01492063","prism:eIssn":"15571211","prism:volume":"37","prism:issueIdentifier":"4","prism:pageRange":"1019-1042","prism:coverDate":"2011-07-01","prism:coverDisplayDate":"July
+        2011","prism:doi":"10.1177/0149206311406265","citedby-count":"2052","affiliation":
+        [{"@_fa": "true", "affilname":"IESE Business School","affiliation-city":"Barcelona","affiliation-country":"Spain"}],"prism:aggregationType":"Journal","subtype":"re","subtypeDescription":"Review","source-id":"20635","openaccess":"0","openaccessFlag":false,"freetoread":{"value":
+        [{"$" :"all"},{"$" :"repository"},{"$" :"repositoryam"}]},"freetoreadLabel":{"value":
+        [{"$" :"All Open Access"},{"$" :"Green"}]}}]}}'
+  recorded_at: Fri, 03 Dec 2021 08:18:34 GMT
 recorded_with: VCR 6.0.0
