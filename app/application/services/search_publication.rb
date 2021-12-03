@@ -27,7 +27,8 @@ module PaperDeep
         Success(Response::ApiResult.new(status: :created, message: input))
       rescue StandardError => e
         puts e.backtrace.join("\n")
-        Failure(Response::ApiResult.new(status: :internal_error, message: 'Having trouble accessing the database publication'))
+        Failure(Response::ApiResult.new(status: :internal_error,
+                                        message: 'Having trouble accessing the database publication'))
       end
 
       # following are support methods that other services could use

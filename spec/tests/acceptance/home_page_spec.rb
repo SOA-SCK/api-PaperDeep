@@ -29,18 +29,18 @@ describe 'Homepage Acceptance Tests' do
       end
     end
     it '(HAPPY) should have search result' do
-        # GIVEN: user has no projects
-        # WHEN: they input keyword to search
-        visit HomePage do |page|
-            page.search('blockchain')
-            # THEN: they should see search result
-            Watir::Wait.until(timeout: 10) { page.num_results == 25 }
-            _(page.num_results).must_equal 25
-            _(page.table_cell_content(1,5)).must_equal '1839'
-            _(page.table_content(1)).must_equal '0 Blockchains and Smart Contracts for the Internet of Things Christidis K. NC State University Scopus link 1839'
-        end
+      # GIVEN: user has no projects
+      # WHEN: they input keyword to search
+      visit HomePage do |page|
+        page.search('blockchain')
+        # THEN: they should see search result
+        Watir::Wait.until(timeout: 10) { page.num_results == 25 }
+        _(page.num_results).must_equal 25
+        _(page.table_cell_content(1, 5)).must_equal '1839'
+        # rubocop:disable Layout/LineLength
+        _(page.table_content(1)).must_equal '0 Blockchains and Smart Contracts for the Internet of Things Christidis K. NC State University Scopus link 1839'
+        # rubocop:enable Layout/LineLength
+      end
     end
-
   end
-    
 end

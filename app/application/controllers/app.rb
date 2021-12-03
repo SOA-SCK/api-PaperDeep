@@ -28,20 +28,20 @@ module PaperDeep
         )
 
         api_v1_link = [
-          search: "api/v1/search",
-          citationtree: "api/v1/citationtree",
-          publication: "api/v1/publication",
-          db_eid: "api/v1/db/eid"
+          search: 'api/v1/search',
+          citationtree: 'api/v1/citationtree',
+          publication: 'api/v1/publication',
+          db_eid: 'api/v1/db/eid'
         ]
 
         full_response = JSON.parse(result_response.to_json)
-        full_response["link"] = api_v1_link
+        full_response['link'] = api_v1_link
 
         response.status = result_response.http_status_code
         full_response.to_json
       end
       #   For Apis
-      routing.on 'api/v1' do 
+      routing.on 'api/v1' do
         routing.on 'search' do
           routing.is do
             # POST /search/
@@ -57,7 +57,7 @@ module PaperDeep
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
 
-              paper_list = Representer::Papers.new(result.value!.message["keyword"],result.value!.message[:paper])
+              paper_list = Representer::Papers.new(result.value!.message['keyword'], result.value!.message[:paper])
               return Representer::PaperList.new(paper_list).to_json
             end
           end
@@ -121,7 +121,10 @@ module PaperDeep
                 params = JSON.parse(routing.body.read)
 
                 paper = PaperDeep::Repository::For.klass(PaperDeep::Entity::Paper).find_eid(params['eid'])
-                return { result: false, error: 'Having trouble getting publication from database' }.to_json if paper.nil?
+                if paper.nil?
+                  return { result: false,
+                           error: 'Having trouble getting publication from database' }.to_json
+                end
 
                 session[:paper].insert(0, paper.content)
                 paper.content.to_json

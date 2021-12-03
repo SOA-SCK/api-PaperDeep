@@ -12,27 +12,23 @@ module PaperDeep
       include Roar::JSON
       include Roar::Hypermedia
       include Roar::Decorator::HypermediaConsumer
-      
+
       property :keyword
       collection :paper, extend: Representer::Paper, class: OpenStruct
 
       link :self do
-        "/api/v1/search"
+        '/api/v1/search'
       end
     end
+
+    # papers class
     class Papers
       def initialize(keyword, paper)
         @paper = paper
         @keyword = keyword
       end
 
-      def paper
-        @paper#.map(&:content)
-      end
-
-      def keyword
-        @keyword
-      end
+      attr_reader :paper, :keyword
     end
   end
 end

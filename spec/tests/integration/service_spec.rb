@@ -26,7 +26,7 @@ describe 'Add_Paper Service Integration Test' do
       papers.search(KEYWORD)
       papers_parse_result = papers.parse
 
-      search_request = {"keyword" => KEYWORD}
+      search_request = { 'keyword' => KEYWORD }
 
       # WHEN: the service is called with the request form object
       result = PaperDeep::Service::AddPaper.new.call(search_request)
@@ -49,7 +49,7 @@ describe 'Add_Paper Service Integration Test' do
 
     it 'HAPPY: should find and return existing paper in database' do
       # GIVEN: a valid url request for a project already in the database:
-      search_request = {"keyword" => KEYWORD}
+      search_request = { 'keyword' => KEYWORD }
       db_paper = PaperDeep::Service::AddPaper.new.call(search_request).value!.message[:storage]
 
       # WHEN: the service is called with the request form object
@@ -76,8 +76,8 @@ describe 'Add_Paper Service Integration Test' do
 
     it 'BAD: should gracefully fail for invalid keyword' do
       # GIVEN: an invalid keyword request is formed
-      BAD_KEYWORD = '大笨狗'
-      search_request = {"keyword" => BAD_KEYWORD}
+      bad_keyword = '大笨狗'
+      search_request = { 'keyword' => bad_keyword }
 
       # WHEN: the service is called with the request form object
       result = PaperDeep::Service::AddPaper.new.call(search_request)

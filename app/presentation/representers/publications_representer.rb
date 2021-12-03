@@ -12,22 +12,21 @@ module PaperDeep
       include Roar::JSON
       include Roar::Hypermedia
       include Roar::Decorator::HypermediaConsumer
-      
+
       collection :publication, extend: Representer::Publication, class: OpenStruct
 
       link :self do
-        "/api/v1/publication"
+        '/api/v1/publication'
       end
     end
+
+    # publication class
     class Publications
       def initialize(publication)
         @publication = publication
       end
 
-      def publication
-        @publication#.map(&:content)
-      end
-
+      attr_reader :publication
     end
   end
 end

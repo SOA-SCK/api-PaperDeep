@@ -35,8 +35,8 @@ module PaperDeep
 
       def paper_from_scopus(input)
         scopus = PaperDeep::PaperMapper.new(App.config.api_key)
-        scopus.search(input["keyword"])[0] if input["eid"].nil?
-        scopus.search(input["eid"])[0] if input["keyword"].nil?
+        scopus.search(input['keyword'])[0] if input['eid'].nil?
+        scopus.search(input['eid'])[0] if input['keyword'].nil?
         scopus.parse
       rescue StandardError
         raise 'Having trouble searching papers'
