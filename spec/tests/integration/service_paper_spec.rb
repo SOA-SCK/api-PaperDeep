@@ -20,7 +20,7 @@ describe 'Add_Paper Service Integration Test' do
       DatabaseHelper.wipe_database
     end
 
-    it 'HAPPY: should be able to find and save remote paper to database' do
+    it 'HAPPY: should be able to find and save remote paper to database by KEYWORD' do
       # GIVEN: a valid url request for an existing remote project:
       papers = PaperDeep::PaperMapper.new(API_TOKEN)
       papers.search(KEYWORD)
@@ -36,6 +36,33 @@ describe 'Add_Paper Service Integration Test' do
 
       # ..and provide a project entity with the right details
       rebuilt = result.value!.message[:storage]
+      _(rebuilt[0].eid).must_equal(papers_parse_result[0].eid)
+      _(rebuilt[0].title).must_equal(papers_parse_result[0].title)
+      _(rebuilt[0].paper_link).must_equal(papers_parse_result[0].paper_link)
+      _(rebuilt[0].citedby_link).must_equal(papers_parse_result[0].citedby_link)
+      _(rebuilt[0].date).must_equal(papers_parse_result[0].date)
+      _(rebuilt[0].organization).must_equal(papers_parse_result[0].organization)
+      _(rebuilt[0].citedby).must_equal(papers_parse_result[0].citedby)
+      _(rebuilt[0].publication_id).must_equal(papers_parse_result[0].publication_id)
+      _(rebuilt[0].author).must_equal(papers_parse_result[0].author)
+    end
+
+    it 'HAPPY: should be able to find and save remote paper to databas by EID' do
+      # GIVEN: a valid url request for an existing remote project:
+      papers = PaperDeep::PaperMapper.new(API_TOKEN)
+      papers.search(EID)
+      papers_parse_result = papers.parse
+
+      search_request = { 'eid' => EID }
+
+      # WHEN: the service is called with the request form object
+      result = PaperDeep::Service::AddPaper.new.call(search_request)
+
+      # THEN: the result should report success..
+      _(result.success?).must_equal true
+
+      # ..and provide a project entity with the right details
+      rebuilt = result.value!.message[:paper]
       _(rebuilt[0].eid).must_equal(papers_parse_result[0].eid)
       _(rebuilt[0].title).must_equal(papers_parse_result[0].title)
       _(rebuilt[0].paper_link).must_equal(papers_parse_result[0].paper_link)

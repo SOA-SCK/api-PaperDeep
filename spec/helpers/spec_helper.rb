@@ -20,5 +20,5 @@ PARSE_CORRECT_PUBLICATION = YAML.safe_load(File.read('spec/fixtures/parse_scival
 CONFIG = YAML.safe_load(File.read('config/secrets.yml'))
 API_TOKEN = CONFIG['test']['api_key']
 KEYWORD = 'blockchain'
-PID = '2-s2.0-84979828304'
-EID = '84979828304'
+PID = '84979828304'
+EID = '2-s2.0-84979828304'
