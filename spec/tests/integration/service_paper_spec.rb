@@ -20,13 +20,14 @@ describe 'Add_Paper Service Integration Test' do
       DatabaseHelper.wipe_database
     end
 
-    it 'HAPPY: should be able to find and save remote paper to database' do
+    it 'HAPPY: should be able to find and save remote paper to database by KEYWORD' do
       # GIVEN: a valid url request for an existing remote project:
       papers = PaperDeep::PaperMapper.new(API_TOKEN)
       papers.search(KEYWORD)
       papers_parse_result = papers.parse
 
-      search_request = PaperDeep::Forms::NewSearch.new.call({'keyword': KEYWORD})
+      search_request = { 'keyword' => KEYWORD }
+
       # WHEN: the service is called with the request form object
       result = PaperDeep::Service::AddPaper.new.call(search_request)
 
@@ -34,7 +35,34 @@ describe 'Add_Paper Service Integration Test' do
       _(result.success?).must_equal true
 
       # ..and provide a project entity with the right details
-      rebuilt = result.value![:storage]
+      rebuilt = result.value!.message[:storage]
+      _(rebuilt[0].eid).must_equal(papers_parse_result[0].eid)
+      _(rebuilt[0].title).must_equal(papers_parse_result[0].title)
+      _(rebuilt[0].paper_link).must_equal(papers_parse_result[0].paper_link)
+      _(rebuilt[0].citedby_link).must_equal(papers_parse_result[0].citedby_link)
+      _(rebuilt[0].date).must_equal(papers_parse_result[0].date)
+      _(rebuilt[0].organization).must_equal(papers_parse_result[0].organization)
+      _(rebuilt[0].citedby).must_equal(papers_parse_result[0].citedby)
+      _(rebuilt[0].publication_id).must_equal(papers_parse_result[0].publication_id)
+      _(rebuilt[0].author).must_equal(papers_parse_result[0].author)
+    end
+
+    it 'HAPPY: should be able to find and save remote paper to databas by EID' do
+      # GIVEN: a valid url request for an existing remote project:
+      papers = PaperDeep::PaperMapper.new(API_TOKEN)
+      papers.search(EID)
+      papers_parse_result = papers.parse
+
+      search_request = { 'eid' => EID }
+
+      # WHEN: the service is called with the request form object
+      result = PaperDeep::Service::AddPaper.new.call(search_request)
+
+      # THEN: the result should report success..
+      _(result.success?).must_equal true
+
+      # ..and provide a project entity with the right details
+      rebuilt = result.value!.message[:paper]
       _(rebuilt[0].eid).must_equal(papers_parse_result[0].eid)
       _(rebuilt[0].title).must_equal(papers_parse_result[0].title)
       _(rebuilt[0].paper_link).must_equal(papers_parse_result[0].paper_link)
@@ -48,8 +76,8 @@ describe 'Add_Paper Service Integration Test' do
 
     it 'HAPPY: should find and return existing paper in database' do
       # GIVEN: a valid url request for a project already in the database:
-      search_request = PaperDeep::Forms::NewSearch.new.call({'keyword': KEYWORD})
-      db_paper = PaperDeep::Service::AddPaper.new.call(search_request).value![:storage]
+      search_request = { 'keyword' => KEYWORD }
+      db_paper = PaperDeep::Service::AddPaper.new.call(search_request).value!.message[:storage]
 
       # WHEN: the service is called with the request form object
       result = PaperDeep::Service::AddPaper.new.call(search_request)
@@ -58,7 +86,7 @@ describe 'Add_Paper Service Integration Test' do
       _(result.success?).must_equal true
 
       # ..and find the same project that was already in the database
-      rebuilt = result.value![:paper]
+      rebuilt = result.value!.message[:paper]
       _(rebuilt.size).must_equal(db_paper.size)
 
       # ..and provide a project entity with the right details
@@ -75,15 +103,15 @@ describe 'Add_Paper Service Integration Test' do
 
     it 'BAD: should gracefully fail for invalid keyword' do
       # GIVEN: an invalid keyword request is formed
-      BAD_KEYWORD = '大笨狗'
-      search_request = PaperDeep::Forms::NewSearch.new.call({'keyword': BAD_KEYWORD})
+      bad_keyword = '大笨狗'
+      search_request = { 'keyword' => bad_keyword }
 
       # WHEN: the service is called with the request form object
       result = PaperDeep::Service::AddPaper.new.call(search_request)
 
       # THEN: the service should report failure with an error message
       _(result.success?).must_equal false
-      _(result.failure.downcase).must_include 'trouble'
+      _(result.failure.message).must_include 'trouble'
     end
   end
 end

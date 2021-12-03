@@ -8,42 +8,38 @@ module PaperDeep
     class AddPaper
       include Dry::Transaction
 
-      step :parse_keyword
       step :find_paper
       step :store_paper
 
       private
 
-      def parse_keyword(input)
-        if input.success?
-          Success(keyword: input[:keyword])
-        else
-          Failure("KEYWORD #{input.errors.messages.first}")
-        end
-      end
-
+      # Expects input["keyword"] or input["eid"]
       def find_paper(input)
         input[:paper] = paper_from_scopus(input)
         Success(input)
       rescue StandardError => e
-        Failure(e.to_s)
+        Failure(Response::ApiResult.new(status: :not_found, message: e.to_s))
       end
 
       def store_paper(input)
         input[:storage] = input[:paper].map do |paper|
           Repository::For.entity(paper).db_find_or_create(paper)
         end
-        Success(input)
+        Success(Response::ApiResult.new(status: :created, message: input))
       rescue StandardError => e
         puts e.backtrace.join("\n")
-        Failure('Having trouble accessing the database')
+        Failure(Response::ApiResult.new(status: :internal_error, message: 'Having trouble accessing the database'))
       end
 
       # following are support methods that other services could use
 
       def paper_from_scopus(input)
         scopus = PaperDeep::PaperMapper.new(App.config.api_key)
-        scopus.search(input[:keyword])[0]
+        eid = input['eid']
+        keyword = input['keyword']
+
+        scopus.search(keyword)[0] if eid.nil?
+        scopus.search(eid)[0] if keyword.nil?
         scopus.parse
       rescue StandardError
         raise 'Having trouble searching papers'

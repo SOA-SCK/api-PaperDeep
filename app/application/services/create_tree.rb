@@ -42,9 +42,12 @@ module PaperDeep
 
         node_content(subtree)
 
-        create_tree(subtree[:next][0], height + 1)
-        create_tree(subtree[:next][1], height + 1)
-        create_tree(subtree[:next][2], height + 1)
+        next_step = height + 1
+        subtree_struct = subtree[:next]
+
+        create_tree(subtree_struct[0], next_step)
+        create_tree(subtree_struct[1], next_step)
+        create_tree(subtree_struct[2], next_step)
       end
 
       def return_tree
