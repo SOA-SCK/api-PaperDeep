@@ -15,6 +15,24 @@ module PaperDeep
       
       property :keyword
       collection :paper, extend: Representer::Paper, class: OpenStruct
+
+      link :self do
+        "/api/v1/publication"
+      end
+    end
+    class Papers
+      def initialize(keyword, paper)
+        @paper = paper
+        @keyword = keyword
+      end
+
+      def paper
+        @paper#.map(&:content)
+      end
+
+      def keyword
+        @keyword
+      end
     end
   end
 end
