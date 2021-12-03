@@ -225,6 +225,7 @@ DEPENDENCIES
   pg
   pry
   puma (~> 5.5)
+  rack (~> 2)
   rack-cors
   rake
   reek
