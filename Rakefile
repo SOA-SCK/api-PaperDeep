@@ -22,7 +22,8 @@ task :spec_accept do
   puts 'NOTE: run app in test environment in another process'
   # front-end build in a test version
   # sh ' cd app/presentation/react/ && npm test && cd ../../../'
-  sh 'bash spec/acceptance_test'
+  # sh 'bash spec/acceptance_test'
+  sh 'ruby spec/tests/acceptance/api_spec.rb'
 end
 
 task :rerack do
