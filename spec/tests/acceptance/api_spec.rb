@@ -71,7 +71,6 @@ describe 'Test API routes' do
       body = JSON.parse(last_response.body)
       _(body['eid']).must_equal '2-s2.0-84979828304'
       _(body['title']).must_equal 'Blockchains and Smart Contracts for the Internet of Things'
-      _(body['citedby']).must_equal 1839
       _(body['publication_id']).must_equal '84979828304'
     end
   end
