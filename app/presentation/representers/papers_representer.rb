@@ -17,7 +17,7 @@ module PaperDeep
       collection :paper, extend: Representer::Paper, class: OpenStruct
 
       link :self do
-        '/api/v1/search'
+        '/api/v1/paper'
       end
     end
 

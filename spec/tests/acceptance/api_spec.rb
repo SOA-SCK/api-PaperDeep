@@ -36,7 +36,7 @@ describe 'Test API routes' do
 
   describe 'Search test' do
     it 'should successfully return scopus search information' do
-      uri = '/api/v1/search'
+      uri = '/api/v1/paper'
       json = {"keyword": "blockchain"}.to_json
       post(uri, json, { 'CONTENT_TYPE' => 'application/json' })
       _(last_response.status).must_equal 201
@@ -44,7 +44,7 @@ describe 'Test API routes' do
       body = JSON.parse(last_response.body)
       _(body['keyword']).must_equal 'blockchain'
       _(body['paper'].length).must_equal 25
-      _(body['links'].first['href']).must_equal '/api/v1/search'
+      _(body['links'].first['href']).must_equal '/api/v1/paper'
     end
   end
 
