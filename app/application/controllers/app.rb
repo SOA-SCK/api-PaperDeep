@@ -28,7 +28,7 @@ module PaperDeep
         )
 
         api_v1_link = [
-          search: 'api/v1/search',
+          paper: 'api/v1/paper',
           citationtree: 'api/v1/citationtree',
           publication: 'api/v1/publication',
           db_eid: 'api/v1/db/eid'
@@ -42,9 +42,9 @@ module PaperDeep
       end
       #   For Apis
       routing.on 'api/v1' do
-        routing.on 'search' do
+        routing.on 'paper' do
           routing.is do
-            # POST /search/
+            # POST /paper/
             routing.post do
               params = JSON.parse(routing.body.read)
               result = PaperDeep::Service::AddPaper.new.call(params)
@@ -64,7 +64,7 @@ module PaperDeep
         end
         routing.on 'citationtree' do
           routing.is do
-            # GET /search/citationtree
+            # GET /citationtree
             routing.get do
               root_paper = session[:paper].first
               scopus = PaperDeep::PaperMapper.new(App.config.api_key)
@@ -79,7 +79,7 @@ module PaperDeep
         end
         routing.on 'publication' do
           routing.is do
-            # POST /search/publication
+            # POST /publication
             routing.post do
               params = JSON.parse(routing.body.read)
               result = PaperDeep::Service::SearchPublication.new.call(params)
