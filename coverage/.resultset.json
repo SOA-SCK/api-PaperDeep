@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/su/api-PaperDeep/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/init.rb": {
         "lines": [
           null,
           null,
@@ -10,14 +10,14 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/config/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/config/init.rb": {
         "lines": [
           null,
           null,
           1
         ]
       },
-      "/home/su/api-PaperDeep/config/environment.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -56,7 +56,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/init.rb": {
         "lines": [
           null,
           null,
@@ -65,7 +65,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/init.rb": {
         "lines": [
           null,
           null,
@@ -75,7 +75,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/papers/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/papers/init.rb": {
         "lines": [
           null,
           null,
@@ -87,7 +87,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/papers/entities/paper.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/papers/entities/paper.rb": {
         "lines": [
           null,
           null,
@@ -128,7 +128,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/papers/entities/publication.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/papers/entities/publication.rb": {
         "lines": [
           null,
           null,
@@ -162,7 +162,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/papers/repositories/for.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/papers/repositories/for.rb": {
         "lines": [
           null,
           null,
@@ -190,7 +190,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/papers/repositories/papers.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/papers/repositories/papers.rb": {
         "lines": [
           null,
           null,
@@ -270,7 +270,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/papers/repositories/publications.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/papers/repositories/publications.rb": {
         "lines": [
           null,
           null,
@@ -303,7 +303,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/papers/repositories/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/papers/repositories/init.rb": {
         "lines": [
           null,
           null,
@@ -312,7 +312,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/papers/mappers/paper_mapper.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/papers/mappers/paper_mapper.rb": {
         "lines": [
           null,
           null,
@@ -425,7 +425,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/domain/papers/mappers/publication_mapper.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/domain/papers/mappers/publication_mapper.rb": {
         "lines": [
           null,
           null,
@@ -513,7 +513,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/application/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/application/init.rb": {
         "lines": [
           null,
           null,
@@ -523,7 +523,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/application/services/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/application/services/init.rb": {
         "lines": [
           null,
           null,
@@ -533,7 +533,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/application/services/add_paper.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/application/services/add_paper.rb": {
         "lines": [
           null,
           null,
@@ -586,7 +586,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/application/services/create_tree.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/application/services/create_tree.rb": {
         "lines": [
           null,
           null,
@@ -648,7 +648,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/application/services/search_publication.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/application/services/search_publication.rb": {
         "lines": [
           null,
           null,
@@ -698,7 +698,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/application/controllers/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/application/controllers/init.rb": {
         "lines": [
           null,
           null,
@@ -708,7 +708,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/application/controllers/app.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/application/controllers/app.rb": {
         "lines": [
           null,
           null,
@@ -851,7 +851,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/infrastructure/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/infrastructure/init.rb": {
         "lines": [
           null,
           null,
@@ -861,7 +861,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/infrastructure/paper_search/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/infrastructure/paper_search/init.rb": {
         "lines": [
           null,
           null,
@@ -870,7 +870,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/infrastructure/paper_search/scopus_api.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/infrastructure/paper_search/scopus_api.rb": {
         "lines": [
           null,
           null,
@@ -928,7 +928,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/infrastructure/publication_search/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/infrastructure/publication_search/init.rb": {
         "lines": [
           null,
           null,
@@ -937,7 +937,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/infrastructure/publication_search/publication_lookup.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/infrastructure/publication_search/publication_lookup.rb": {
         "lines": [
           null,
           null,
@@ -998,7 +998,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/infrastructure/database/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/infrastructure/database/init.rb": {
         "lines": [
           null,
           null,
@@ -1008,7 +1008,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/infrastructure/database/orms/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/infrastructure/database/orms/init.rb": {
         "lines": [
           null,
           null,
@@ -1017,7 +1017,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/infrastructure/database/orms/papers_orm.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/infrastructure/database/orms/papers_orm.rb": {
         "lines": [
           null,
           null,
@@ -1037,7 +1037,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/infrastructure/database/orms/publications_orm.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/infrastructure/database/orms/publications_orm.rb": {
         "lines": [
           null,
           null,
@@ -1058,7 +1058,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/presentation/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/presentation/init.rb": {
         "lines": [
           null,
           null,
@@ -1068,7 +1068,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/presentation/responses/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/presentation/responses/init.rb": {
         "lines": [
           null,
           null,
@@ -1077,7 +1077,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/presentation/responses/api_result.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/presentation/responses/api_result.rb": {
         "lines": [
           null,
           null,
@@ -1106,7 +1106,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/presentation/representers/init.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/presentation/representers/init.rb": {
         "lines": [
           null,
           null,
@@ -1115,7 +1115,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/presentation/representers/http_response_representer.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/presentation/representers/http_response_representer.rb": {
         "lines": [
           null,
           null,
@@ -1158,7 +1158,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/presentation/representers/paper_representer.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/presentation/representers/paper_representer.rb": {
         "lines": [
           null,
           null,
@@ -1190,7 +1190,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/presentation/representers/papers_representer.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/presentation/representers/papers_representer.rb": {
         "lines": [
           null,
           null,
@@ -1228,7 +1228,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/presentation/representers/publication_representer.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/presentation/representers/publication_representer.rb": {
         "lines": [
           null,
           null,
@@ -1256,7 +1256,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/app/presentation/representers/publications_representer.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/app/presentation/representers/publications_representer.rb": {
         "lines": [
           null,
           null,
@@ -1292,7 +1292,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/spec/helpers/vcr_helper.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/spec/helpers/vcr_helper.rb": {
         "lines": [
           null,
           null,
@@ -1314,8 +1314,8 @@
           null,
           1,
           4,
-          74,
-          74,
+          54,
+          54,
           null,
           null,
           4,
@@ -1329,7 +1329,7 @@
           null
         ]
       },
-      "/home/su/api-PaperDeep/spec/helpers/database_helper.rb": {
+      "/home/sycheng/rb_project/api-PaperDeep/spec/helpers/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -1347,7 +1347,7 @@
         ]
       }
     },
-    "timestamp": 1638525482
+    "timestamp": 1638952113
   },
   "Minitest": {
     "coverage": {
