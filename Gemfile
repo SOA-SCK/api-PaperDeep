@@ -31,6 +31,11 @@ gem 'dry-types', '~> 1.5'
 # Networking
 gem 'http', '~> 5.0'
 
+# Caching
+gem 'rack-cache', '~> 1.13'
+gem 'redis', '~> 4.5'
+gem 'redis-rack-cache', '~> 2.2'
+
 # Database
 # gem 'unicode-display_width' ,'~> 0.1.1'
 # gem 'hirb', '~> 0'
