@@ -67,9 +67,10 @@ module PaperDeep
           routing.is do
             # GET /citationtree
             routing.get do
+              root_paper = Hash.new
+              root_paper[:eid] = routing.params["eid"]
               response.cache_control public: true, max_age: 300
-              
-              root_paper = session[:paper].first
+
               scopus = PaperDeep::PaperMapper.new(App.config.api_key)
 
               tree = PaperDeep::Service::CreateCitationTree.new(scopus, root_paper)
