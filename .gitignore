@@ -59,3 +59,4 @@ build-iPhoneSimulator/
 
 *.db
 _snippets/
+_cache/

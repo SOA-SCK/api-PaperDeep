@@ -17,6 +17,7 @@ module PaperDeep
     # end
 
     plugin :halt
+    plugin :caching
 
     route do |routing|
       # GET /
@@ -66,6 +67,8 @@ module PaperDeep
           routing.is do
             # GET /citationtree
             routing.get do
+              response.cache_control public: true, max_age: 300
+              
               root_paper = session[:paper].first
               scopus = PaperDeep::PaperMapper.new(App.config.api_key)
 
