@@ -67,13 +67,17 @@ module PaperDeep
           routing.is do
             # GET /citationtree
             routing.get do
-              root_paper = Hash.new
-              root_paper[:eid] = routing.params["eid"]
+              root_paper = PaperDeep::Repository::For.klass(PaperDeep::Entity::Paper).find_eid(routing.params['eid'])
+              if root_paper.nil?
+                return { result: false,
+                         error: 'Having trouble getting publication from database' }.to_json
+              end
+              # root_paper[:eid] = routing.params["eid"]
               response.cache_control public: true, max_age: 300
 
               scopus = PaperDeep::PaperMapper.new(App.config.api_key)
 
-              tree = PaperDeep::Service::CreateCitationTree.new(scopus, root_paper)
+              tree = PaperDeep::Service::CreateCitationTree.new(scopus, root_paper.content)
               tree.create
               tree_hash = tree.return_tree
 
