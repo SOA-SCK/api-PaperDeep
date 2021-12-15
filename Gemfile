@@ -42,6 +42,10 @@ gem 'redis-rack-cache', '~> 2.2'
 # gem 'hirb-unicode', '~> 0'
 gem 'sequel', '~> 5.49'
 
+
+# Asynchronicity
+gem 'concurrent-ruby', '~> 1.1'
+
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
 end
