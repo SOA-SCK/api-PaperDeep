@@ -37,7 +37,7 @@ describe 'Test API routes' do
   describe 'Search test' do
     it 'should successfully return scopus search information' do
       uri = '/api/v1/paper'
-      json = {"keyword": "blockchain"}.to_json
+      json = { keyword: 'blockchain' }.to_json
       post(uri, json, { 'CONTENT_TYPE' => 'application/json' })
       _(last_response.status).must_equal 201
 
@@ -51,7 +51,7 @@ describe 'Test API routes' do
   describe 'publication test' do
     it 'should successfully return publication search information' do
       uri = '/api/v1/publication'
-      json = {"pid":'84979828304'}.to_json
+      json = { pid: '84979828304' }.to_json
       post(uri, json, { 'CONTENT_TYPE' => 'application/json' })
       _(last_response.status).must_equal 201
 
@@ -64,7 +64,7 @@ describe 'Test API routes' do
   describe 'db/eid test' do
     it 'should successfully return publication search information' do
       uri = '/api/v1/db/eid'
-      json = {"eid": "2-s2.0-84979828304"}.to_json
+      json = { eid: '2-s2.0-84979828304' }.to_json
       post(uri, json, { 'CONTENT_TYPE' => 'application/json' })
       _(last_response.status).must_equal 200
 

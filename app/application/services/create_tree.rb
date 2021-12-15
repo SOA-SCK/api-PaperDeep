@@ -52,16 +52,14 @@ module PaperDeep
         create_tree(subtree_struct[0], next_step)
         create_tree(subtree_struct[1], next_step)
         create_tree(subtree_struct[2], next_step)
-
-
       end
 
       def create_tree_concurrent(subtree, height)
         return [] if height == 3
-        subtree[:next].map {
-          |node|
-          Concurrent::Promise.execute {node_content(node)}
-      }.map(&:value)
+
+        subtree[:next].map do |node|
+          Concurrent::Promise.execute { node_content(node) }
+        end.map(&:value)
         # puts subtree
         next_step = height + 1
         subtree_struct = subtree[:next]

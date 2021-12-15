@@ -35,7 +35,6 @@ module PaperDeep
 
       def publication_from_scopus(input)
         scopus = PaperDeep::PublicationMapper.new(App.config.api_key)
-        puts
         scopus.search(input['pid'])
         scopus.parse
       rescue StandardError
