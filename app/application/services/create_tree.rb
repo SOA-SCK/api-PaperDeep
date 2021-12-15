@@ -3,6 +3,7 @@
 # require_relative '../../init'
 # require_relative '../../config/environment'
 require 'json'
+require 'concurrent'
 
 # PaperDeep Module
 module PaperDeep
@@ -21,8 +22,11 @@ module PaperDeep
           content: { NodeName: @root_paper[:title], link: @root_paper[:paper_link], eid: @root_paper[:eid] },
           next: []
         }
-
-        create_tree(@tree_content, 0)
+        # concurrent
+        node_content(@tree_content)
+        create_tree_concurrent(@tree_content, 1)
+        # without concurrent
+        # create_tree(@tree_content, 0)
         nil
       end
 
@@ -48,6 +52,20 @@ module PaperDeep
         create_tree(subtree_struct[0], next_step)
         create_tree(subtree_struct[1], next_step)
         create_tree(subtree_struct[2], next_step)
+      end
+
+      def create_tree_concurrent(subtree, height)
+        return [] if height == 3
+
+        subtree[:next].map do |node|
+          Concurrent::Promise.execute { node_content(node) }
+        end.map(&:value)
+        # puts subtree
+        next_step = height + 1
+        subtree_struct = subtree[:next]
+        (0..2).map do |num|
+          create_tree_concurrent(subtree_struct[num], next_step)
+        end
       end
 
       def return_tree

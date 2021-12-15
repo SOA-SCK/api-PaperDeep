@@ -8,6 +8,7 @@ require 'delegate' # needed until Rack 2.3 fixes delegateclass bug
 require 'rack/cache'
 require 'redis-rack-cache'
 
+# rubocop:disable Metrics/BlockLength
 module PaperDeep
   # Configuration for the App
   class App < Roda
@@ -31,14 +32,14 @@ module PaperDeep
             metastore: 'file:_cache/rack/meta',
             entitystore: 'file:_cache/rack/body'
       end
-  
+
       configure :production do
         # Set DATABASE_URL environment variable on production platform
-  
+
         use Rack::Cache,
             verbose: true,
-            metastore: config.REDISCLOUD_URL + '/0/metastore',
-            entitystore: config.REDISCLOUD_URL + '/0/entitystore'
+            metastore: "#{config.REDISCLOUD_URL}/0/metastore",
+            entitystore: "#{config.REDISCLOUD_URL}/0/entitystore"
       end
 
       configure :app_test do
@@ -57,3 +58,4 @@ module PaperDeep
     # rubocop:enable Lint/ConstantDefinitionInBlock
   end
 end
+# rubocop:enable Metrics/BlockLength
