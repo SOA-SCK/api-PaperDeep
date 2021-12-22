@@ -1,0 +1,2 @@
+queues:
+  - https://sqs.us-east-2.amazonaws.com/862466950549/PaperQueue
