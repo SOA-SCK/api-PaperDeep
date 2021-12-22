@@ -27,7 +27,20 @@ module PaperDeep
         create_tree_concurrent(@tree_content, 1)
         # without concurrent
         # create_tree(@tree_content, 0)
+
+        # store tree content to db
+        puts 'start storing'
+        store_tree
         nil
+      end
+
+      def store_tree
+        # store tree content to db
+        tree_entity = PaperDeep::Entity::Tree.new(eid:@root_paper[:eid],data: @tree_content.to_json)
+        puts tree_entity
+        Repository::For.entity(tree_entity).db_find_or_create(tree_entity)
+      rescue StandardError => e
+        puts "Error storing tree: #{e}"
       end
 
       def node_content(subtree)
