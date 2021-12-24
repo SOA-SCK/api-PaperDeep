@@ -34,6 +34,7 @@ module PaperDeep
       end
 
       configure :production do
+        puts 'RUNNING IN PRODUCTION MODE'
         # Set DATABASE_URL environment variable on production platform
 
         use Rack::Cache,
