@@ -27,7 +27,7 @@ task :spec_accept do
 end
 
 task :rerack do
-  sh "rerun -c rackup --ignore 'coverage/*'"
+  sh "rerun -c 'puma config.ru -p 9090' --ignore 'coverage/*'"
 end
 
 namespace :db do
