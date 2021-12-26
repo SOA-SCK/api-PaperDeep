@@ -29,10 +29,9 @@ module TreeBuild
     shoryuken_options queue: config.TREE_QUEUE_URL, auto_delete: true
 
     def perform(_sqs_msg, request)
+      request = JSON.parse(request)
       job = JobReporter.new(request, Worker.config)
       job.report(BuildMonitor.starting_percent)
-
-      request = JSON.parse(request)
       root_paper = PaperDeep::Repository::For.klass(PaperDeep::Entity::Paper).find_eid(request['eid'])
       if root_paper.nil?
           return { result: false, error: 'Having trouble getting publication from database' }.to_json
@@ -46,11 +45,11 @@ module TreeBuild
       job.report(BuildMonitor.building_percent)
 
       tree_hash = tree.return_tree
-      tree_hash.to_json
       puts tree_hash.to_json
       # Keep sending finished status to any latecoming subscribers
       job.report_each_second(5) { BuildMonitor.finished_percent }
-    rescue StandardError
+    rescue StandardError => e
+      puts e.to_s
       # worker should crash fail early - only catch errors we expect!
       puts 'CITATION TREE CREATION FAIL'
     end

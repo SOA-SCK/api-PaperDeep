@@ -71,16 +71,16 @@ module PaperDeep
 
               tree = PaperDeep::Repository::For.klass(PaperDeep::Entity::Tree).find_eid(routing.params['eid'])
               # if can't find tree, then call worker do the job
-              if tree.nil?
+              # if tree.nil?
                 Messaging::Queue
                   .new(App.config.TREE_QUEUE_URL, App.config)
                   .send({eid: routing.params['eid'], request_id: request_id}.to_json)
-                return {status: :processing, message: 'PROCESSING_MSG'}.to_json
-              else
+                return {result:false, status: :processing, ws_route: App.config.API_HOST+'/faye/faye',channel_id: request_id}.to_json
+              # else
                 # if get tree then cache the result?
                 #response.cache_control public: true, max_age: 300
-                return tree.data
-              end
+                # return {result:true, status: :created ,data: tree.data}.to_json
+              # end
             end
           end
         end

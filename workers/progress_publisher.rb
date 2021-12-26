@@ -19,6 +19,7 @@ module TreeBuild
           body: message_body(message)
         )
       puts "(#{response.status})"
+      puts message_body(message)
     rescue HTTP::ConnectionError
       puts '(Faye server not found - progress not sent)'
     end
