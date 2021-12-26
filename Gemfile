@@ -49,6 +49,7 @@ gem 'aws-sdk-sqs', '~> 1.48'
 # WORKER
 gem 'shoryuken', '~> 5.3'
 gem 'faye', '~> 1.4'
+gem 'eventmachine', '>= 0.12.0'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'

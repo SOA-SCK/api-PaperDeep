@@ -271,6 +271,7 @@ DEPENDENCIES
   dry-transaction (~> 0.13)
   dry-types (~> 1.5)
   dry-validation (~> 1.7)
+  eventmachine (>= 0.12.0)
   faye (~> 1.4)
   figaro (~> 1.2)
   flog

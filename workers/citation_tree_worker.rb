@@ -44,8 +44,6 @@ module TreeBuild
       tree.create
       job.report(BuildMonitor.building_percent)
 
-      tree_hash = tree.return_tree
-      puts tree_hash.to_json
       # Keep sending finished status to any latecoming subscribers
       job.report_each_second(5) { BuildMonitor.finished_percent }
     rescue StandardError => e
