@@ -75,12 +75,13 @@ module PaperDeep
               if tree.nil?
                 Messaging::Queue
                   .new(App.config.TREE_QUEUE_URL, App.config)
-                  .send({eid: routing.params['eid'], request_id: request_id}.to_json)
-                return {result:false, status: :processing, ws_route: App.config.API_HOST+'/faye/faye',channel_id: request_id.to_s}.to_json
+                  .send({ eid: routing.params['eid'], request_id: request_id }.to_json)
+                return { result: false, status: :processing, ws_route: "#{App.config.API_HOST}/faye/faye",
+channel_id: request_id.to_s }.to_json
               else
                 # if get tree then cache the result?
                 response.cache_control public: true, max_age: 300
-                return {result:true, status: :created ,data: tree.data}.to_json
+                return { result: true, status: :created, data: tree.data }.to_json
               end
             end
           end

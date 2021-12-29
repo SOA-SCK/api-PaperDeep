@@ -11,7 +11,7 @@ module PaperDeep
       ENTITY_REPOSITORY = {
         Entity::Publication => Publications,
         Entity::Paper       => Papers,
-        Entity::Tree       => Trees
+        Entity::Tree        => Trees
       }.freeze
 
       def self.klass(entity_klass)
