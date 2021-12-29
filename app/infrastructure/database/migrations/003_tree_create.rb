@@ -8,7 +8,7 @@ Sequel.migration do
       primary_key :id
 
       String      :eid, unique: true, null: false
-      String      :data, unique: true, text:true
+      String      :data, unique: true, text: true
 
       DateTime :created_at
       DateTime :updated_at

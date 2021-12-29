@@ -9,7 +9,7 @@ module TreeBuild
 
     def initialize(request, config)
       @request = request
-      @publisher = ProgressPublisher.new(config, request["request_id"])
+      @publisher = ProgressPublisher.new(config, request['request_id'])
     end
 
     def report(msg)

@@ -4,7 +4,6 @@ module PaperDeep
   module Repository
     # Repository for Members
     class Trees
-
       def self.find_eid(eid)
         rebuild_entity Database::TreeOrm.first(eid: eid)
       end
