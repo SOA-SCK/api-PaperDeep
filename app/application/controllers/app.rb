@@ -18,6 +18,8 @@ module PaperDeep
 
     plugin :halt
     plugin :caching
+    plugin :all_verbs # allows DELETE and other HTTP verbs beyond GET/POST
+    use Rack::MethodOverride # for other HTTP verbs (with plugin all_verbs)
 
     route do |routing|
       # GET /
@@ -67,21 +69,20 @@ module PaperDeep
           routing.is do
             # GET /citationtree
             routing.get do
-              root_paper = PaperDeep::Repository::For.klass(PaperDeep::Entity::Paper).find_eid(routing.params['eid'])
-              if root_paper.nil?
-                return { result: false,
-                         error: 'Having trouble getting publication from database' }.to_json
+              request_id = [request.env, request.path, Time.now.to_f].hash
+              tree = PaperDeep::Repository::For.klass(PaperDeep::Entity::Tree).find_eid(routing.params['eid'])
+              # if can't find tree, then call worker do the job
+              if tree.nil?
+                Messaging::Queue
+                  .new(App.config.TREE_QUEUE_URL, App.config)
+                  .send({ eid: routing.params['eid'], request_id: request_id }.to_json)
+                return { result: false, status: :processing, ws_route: "#{App.config.API_HOST}/faye/faye",
+channel_id: request_id.to_s }.to_json
+              else
+                # if get tree then cache the result?
+                response.cache_control public: true, max_age: 300
+                return { result: true, status: :created, data: tree.data }.to_json
               end
-              # root_paper[:eid] = routing.params["eid"]
-              response.cache_control public: true, max_age: 300
-
-              scopus = PaperDeep::PaperMapper.new(App.config.api_key)
-
-              tree = PaperDeep::Service::CreateCitationTree.new(scopus, root_paper.content)
-              tree.create
-              tree_hash = tree.return_tree
-
-              tree_hash.to_json
             end
           end
         end

@@ -2,6 +2,7 @@
 
 require_relative 'papers'
 require_relative 'publications'
+require_relative 'trees'
 
 module PaperDeep
   module Repository
@@ -9,7 +10,8 @@ module PaperDeep
     module For
       ENTITY_REPOSITORY = {
         Entity::Publication => Publications,
-        Entity::Paper       => Papers
+        Entity::Paper       => Papers,
+        Entity::Tree        => Trees
       }.freeze
 
       def self.klass(entity_klass)
