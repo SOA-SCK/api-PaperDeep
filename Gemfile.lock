@@ -271,7 +271,6 @@ DEPENDENCIES
   dry-transaction (~> 0.13)
   dry-types (~> 1.5)
   dry-validation (~> 1.7)
-  eventmachine (>= 0.12.0)
   faye (~> 1.4)
   figaro (~> 1.2)
   flog
@@ -280,6 +279,7 @@ DEPENDENCIES
   minitest (~> 5.0)
   minitest-rg (~> 5.0)
   multi_json (~> 1.15)
+  nokogiri
   page-object (~> 2.3)
   pg
   pry
