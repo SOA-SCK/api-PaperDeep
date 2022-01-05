@@ -48,7 +48,7 @@ gem 'concurrent-ruby', '~> 1.1'
 
 # WORKER
 # gem 'eventmachine', '>= 0.12.0'
-gem 'libxml-ruby', '~>3.0.0'
+gem 'libxml', '~>3.0.0'
 gem 'faye', '~> 1.4'
 gem 'shoryuken', '~> 5.3'
 
