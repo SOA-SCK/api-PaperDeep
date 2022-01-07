@@ -42,7 +42,6 @@ describe 'Add_Paper Service Integration Test' do
       _(rebuilt[0].citedby_link).must_equal(papers_parse_result[0].citedby_link)
       _(rebuilt[0].date).must_equal(papers_parse_result[0].date)
       _(rebuilt[0].organization).must_equal(papers_parse_result[0].organization)
-      _(rebuilt[0].citedby).must_equal(papers_parse_result[0].citedby)
       _(rebuilt[0].publication_id).must_equal(papers_parse_result[0].publication_id)
       _(rebuilt[0].author).must_equal(papers_parse_result[0].author)
     end
@@ -69,7 +68,6 @@ describe 'Add_Paper Service Integration Test' do
       _(rebuilt[0].citedby_link).must_equal(papers_parse_result[0].citedby_link)
       _(rebuilt[0].date).must_equal(papers_parse_result[0].date)
       _(rebuilt[0].organization).must_equal(papers_parse_result[0].organization)
-      _(rebuilt[0].citedby).must_equal(papers_parse_result[0].citedby)
       _(rebuilt[0].publication_id).must_equal(papers_parse_result[0].publication_id)
       _(rebuilt[0].author).must_equal(papers_parse_result[0].author)
     end

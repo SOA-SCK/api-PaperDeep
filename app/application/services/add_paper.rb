@@ -34,7 +34,7 @@ module PaperDeep
       # following are support methods that other services could use
 
       def paper_from_scopus(input)
-        scopus = PaperDeep::PaperMapper.new(App.config.api_key)
+        scopus = PaperDeep::PaperMapper.new(App.config.api_key_backup)
         eid = input['eid']
         keyword = input['keyword']
 

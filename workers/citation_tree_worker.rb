@@ -36,7 +36,7 @@ module TreeBuild
       return { result: false, error: 'Having trouble getting publication from database' }.to_json if root_paper.nil?
 
       # response.cache_control public: true, max_age: 300
-      scopus = PaperDeep::PaperMapper.new(Worker.config.api_key)
+      scopus = PaperDeep::PaperMapper.new(Worker.config.api_key_backup)
       tree = PaperDeep::Service::CreateCitationTree.new(scopus, root_paper.content)
       job.report(BuildMonitor.searching_percent)
 
